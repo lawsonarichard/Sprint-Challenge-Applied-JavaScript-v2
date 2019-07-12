@@ -30,13 +30,24 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+Document Object Model. Allows programs to read and manipulate the page's content.
+
 2. What is an event?
+
+Things that happened to HTML elements and how the webpage exicutes them.
 
 3. What is an event listener?
 
+A function that will wait for a certain event to occur then it will do as told.
+
 4. Why would we convert a NodeList into an Array?
 
+To allow the use of array methods.
+
 5. What is a component?
+
+Set of logic that can be re-used.
+
 
 ### Git Set up
 
@@ -51,7 +62,7 @@ Your finished project must include all of the following requirements:
 
 * [ ] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled it. DO NOT add any code to the HTML file itself.
 
-* [ ] Following the instructions in the `Header/index.js` file, create the Header component. 
+* [X] Following the instructions in the `Header/index.js` file, create the Header component. 
 
 * [ ] Following the instructions in the `Tabs/index.js` file, create individual Tabs components.
 

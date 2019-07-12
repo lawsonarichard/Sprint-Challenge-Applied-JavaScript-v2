@@ -10,11 +10,11 @@
 
 
 
-axios.get('https://lambda-times-backend.herokuapp.com/topics').then(res => {
+axios.get("https://lambda-times-backend.herokuapp.com/topics").then(res => {
     console.log('the data is here', res)
     const topics = document.querySelector('.topics');
     return res.data.topics.map(topic => {
-        return topics.appendChild(tabsAlive(topics));
+        return topics.appendChild(tabsAlive(topic));
     });
     
     
@@ -23,11 +23,11 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics').then(res => {
     console.log('data is messed up')
 });
 
-function tabsAlive(topics) {
+function tabsAlive(topic) {
 
     const tab = document.createElement('div');
     tab.classList.add('tab');
-    tab.textContent = `topics`;
+    tab.textContent = topic;
      
 
     return tab
