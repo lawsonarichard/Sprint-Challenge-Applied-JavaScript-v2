@@ -18,14 +18,18 @@
 //
 // Create a card for each of the articles and add the card to the DOM.
 const cardContainer = document.querySelector('.cards-container');
-cardContainer.appendChild(cardComponent());
-// axios.get('https://lambda-times-backend.herokuapp.com/articles').then(data => {
-
-    
-// })
-// .catch(err => {
-//     console.log('data is messed up')
-// });
+axios.get('https://lambda-times-backend.herokuapp.com/articles').then(res => {
+    const articles = res.data.articles;
+    const articleTopic = Object.keys(articles);
+    articleTopic.map(topic => {
+        articles[`${topic}`].map(article => {
+            cardContainer.appendChild(cardComponent());
+        });
+    });   
+})
+.catch(err => {
+    console.log('data is messed up')
+});
 
 function cardComponent(cardObj){
     const card = document.createElement('div');
