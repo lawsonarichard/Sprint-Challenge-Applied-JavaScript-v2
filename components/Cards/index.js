@@ -25,7 +25,7 @@ axios.get("https://lambda-times-backend.herokuapp.com/articles")
 
     articleTopic.map(topic => {
         articles[`${topic}`].map(article => {
-            cardContainer.append(cardComponent(articles));
+            cardContainer.append(cardComponent(article));
         });
     });
 })
