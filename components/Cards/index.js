@@ -17,34 +17,44 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
-const cards = document.querySelector('cards-container');
-axios.get('https://lambda-times-backend.herokuapp.com/articles').then(data => {
-    console.log('the data is here', data)
-    const cardData = cardInfo(data.data)
-    cards.appendChild(cardData);
+const cardContainer = document.querySelector('.cards-container');
+cardContainer.appendChild(cardComponent());
+// axios.get('https://lambda-times-backend.herokuapp.com/articles').then(data => {
+
     
-})
-.catch(err => {
-    console.log('data is messed up')
-});
+// })
+// .catch(err => {
+//     console.log('data is messed up')
+// });
+
 function cardComponent(cardObj){
     const card = document.createElement('div');
-    const headline = doucment.createElement('div');
-    const author = document.createElement('div');
-    const imgContainer = document.createElement('div');
-    const image = document.createElement('img');
-    const by = document.createElement('span');
-
     card.classList.add('card');
+
+    const headline = document.createElement('div');
     headline.classList.add('headline');
-    author.classList.add('author');
+
+    const authorinfo = document.createElement('div');
+    authorinfo.classList.add('author');
+
+    const imgContainer = document.createElement('div');
     imgContainer.classList.add('img-container');
-    by.classList.add('span');
 
-    image.src = imgUrl;
+    const image = document.createElement('img');
 
-    card.append(headline, author, imgContainer, by);
-    imgContainer.appendChild(image);
+    const by = document.createElement('span');
+    by.classList.add('span');  
     
-    return cards
+    card.append(headline);
+    card.append(authorinfo);
+    authorinfo.append(imgContainer);
+    authorinfo.append(by);
+    imgContainer.append(image);
+
+    //TESTING FUNCTION
+
+    headline.textContent = "cats";
+    image.src = "https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzEwNC84MzAvb3JpZ2luYWwvc2h1dHRlcnN0b2NrXzExMTA1NzIxNTkuanBn";
+    by.textContent = "By Silly Cat";
+    return card
 }

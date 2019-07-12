@@ -30,6 +30,6 @@ function Header() {
     header.append(date);
     header.append(h1);
     header.append(temp);
-    
+
     return header
 }
